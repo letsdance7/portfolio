@@ -70,3 +70,9 @@ h1 {
     border-radius: 10px; /* 画像の角を10pxの半径で丸める */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 画像に影を追加して立体感を出す */
 }
+
+.profile-image {
+    width: 500px; /* 幅を500pxに指定 */
+    height: auto; /* 高さは自動で設定してアスペクト比を維持 */
+    object-fit: cover; /* 画像のアスペクト比を維持しつつ、領域に収める */
+    text-align: center; /* 画像を中央に配置 */
