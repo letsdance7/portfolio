@@ -1,78 +1,189 @@
-.m-plus-1p-regular {
-  font-family: "M PLUS 1p", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.m-plus-1p-medium {
-  font-family: "M PLUS 1p", serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.m-plus-1p-bold {
-  font-family: "M PLUS 1p", serif;
-  font-weight: 700;
-  font-style: normal;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif; /* ボディ全体のフォントをArialに設定し、フォールバックとしてsans-serifを指定 */
-    line-height: 1.6; /* 行間を1.6に設定して読みやすくする */
+    background-color: #FAF9F6;
+    line-height: 1.6;
+    font-family: "M PLUS Rounded 1c", serif;
 }
 
-header {
-    background: #333; /* ヘッダーの背景色をダークグレーに設定 */
-    color: #fff; /* ヘッダー内の文字色を白に設定 */
-}
-
-.menu {
-    list-style: none; /* リストのデフォルトスタイルを無効にする */
-    padding: 0; /* リストの内側の余白を0に設定 */
-    margin: 0; /* リストの外側の余白を0に設定 */
-    display: flex; /* フレックスボックスを使用してリストアイテムを横並びに配置 */
-    justify-content: center; /* リストアイテムを中央に配置 */
-}
-
-.menu li {
-    margin: 0 15px; /* リストの各アイテムに左右15pxのマージンを追加 */
-}
-
-.menu a {
-    color: white; /* リンクの文字色を白に設定 */
-    text-decoration: none; /* リンクの下線を無効にする */
-    padding: 10px; /* リンクの内側に10pxのパディングを追加 */
-    transition: background 0.3s; /* 背景色の変化に0.3秒のトランジションを追加 */
-}
-
-.menu a:hover {
-    background: #555; /* ホバー時に背景色をダークグレーに変化 */
-    border-radius: 4px; /* ホバー時にリンクの角を4pxの半径で丸める */
-}
-
-section {
-    padding: 20px; /* 各セクションの内側に20pxのパディングを設定 */
-}
-
-h1 {
-    margin: 20px 0; /* h1見出しの上下のマージンを20pxに設定 */
+/* 全体のレイアウト */
+.header {
+    background: #FAF9F6;
+    color: #4d4848;
+    padding: 20px;
+    text-align: center;
 }
 
 .container {
-    max-width: 1200px; /* コンテナの最大幅を1200pxに設定 */
-    margin: 0 auto; /* 左右のマージンを自動で調整し、中央に配置 */
-    padding: 0 20px; /* 左右に20pxのパディングを追加 */
+    display: flex;
+    flex-wrap: wrap; /* スマホで要素が折り返されるようにする */
 }
 
-.img-container img {
-    width: 80%; /* 画像の幅を親要素の80%に設定 */
-    object-fit: cover; /* アスペクト比を維持しつつ、指定サイズに収める */
-    border-radius: 10px; /* 画像の角を10pxの半径で丸める */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 画像に影を追加して立体感を出す */
+.sidebar {
+    width: 250px;
+    background: #D1E6E6;
+    color: #333333;
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    color: #4A6F8E;
+}
+
+.sidebar ul {
+    list-style: none;
+    
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #4A6F8E;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    margin-left: 270px; /* デスクトップ時のサイドバー幅を考慮 */
+    padding: 20px;
+    flex-grow: 1;
+}
+
+h2 {
+    margin-bottom: 10px;
+    text-align: left;
+    color: #4D545D;
+}
+
+
+/* プロフィール */
+.profile-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* スマホでは縦に並ぶ */
 }
 
 .profile-image {
-    width: 500px; /* 幅を500pxに指定 */
-    height: auto; /* 高さは自動で設定してアスペクト比を維持 */
-    object-fit: cover; /* 画像のアスペクト比を維持しつつ、領域に収める */
-    text-align: center; /* 画像を中央に配置 */
+    width: 100%; /* スマホでは幅いっぱい */
+    max-width: 300px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.profile-description {
+    flex-grow: 1;
+}
+
+.profile-description p {
+    margin: 0;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    margin-bottom: 15px;
+}
+
+section p {
+    margin: 10px 0 20px;
+    font-size: 1rem;
+    text-align: left;
+    color: #4D545D;
+}
+
+
+.img-container img {
+    width: 100%; /* 親要素の幅に合わせる */
+    max-width: 600px; /* 最大幅を制限 */
+    height: auto; /* 自動で高さを調整 */
+    object-fit: contain; /* 縦横比を維持して表示 */
+}
+
+.img-container1 img {
+    width: 100%; /* 親要素の幅に合わせる */
+    max-width: 500px; /* 最大幅を制限 */
+    height: auto; /* 自動で高さを調整 */
+    object-fit: contain; /* 縦横比を維持して表示 */
+}
+
+
+.video-container video{
+    display: flex;
+    justify-content: center; /* 動画を中央揃え */
+    align-items: center;
+    margin: 20px 0; /* 上下の余白 */
+    width: 100%; /* 親要素の幅に合わせる */
+    max-width: 600px; /* 最大幅を制限 */
+    height: auto; /* 縦横比を維持して高さを調整 */
+}
+
+ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+li {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.sawarabi-gothic-regular {
+    font-family: "Sawarabi Gothic", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.kosugi-maru-regular {
+    font-family: "Kosugi Maru", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* --- メディアクエリ --- */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%; /* サイドバーを全幅に */
+        height: auto;
+    }
+
+    .content {
+        margin-left: 0; /* サイドバーの幅を考慮しない */
+    }
+
+    .profile-container {
+        flex-direction: column; /* スマホでは縦並び */
+        align-items: flex-start;
+    }
+
+    .profile-image {
+        margin-right: 0;
+        margin-bottom: 20px; /* 縦並びの余白 */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 0.9rem; /* フォントサイズを調整 */
+    }
+
+    .header {
+        padding: 10px;
+        font-size: 1.2rem; /* ヘッダーの文字サイズを縮小 */
+    }
+}
